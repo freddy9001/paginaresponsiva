@@ -1,0 +1,124 @@
+body
+{
+	/*esto equivale a 16 pixel*/
+	font-size: 100%;
+	font-family: "verdana";
+}
+header
+{
+	background:url("images/fondocabeza.jpg");
+	/*para apretar la imagen y acomodarla*/
+	background-size: 100% 100%; 
+	height: 250px;
+}
+#mimenu
+{
+	background: rgba(0,0,0,0.8);
+	list-style: none;
+	padding: 0.5em;
+	text-align: center;
+	margin: 0 auto;
+}
+/*Diseño UX (U=user X=xperience)
+VA UN POQUITO MAS ALLA DE LA USABILIDAD Y EMPLEO CONCEPTOS DE PUBLICIDAD Y SICOLOGIA E INTUCION*/
+#mimenu li
+{
+	display: inline-block;
+	padding: 1em;
+}
+#mimenu li a
+{
+	color: #fff;
+	font-weight: bolder;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+#mimenu li a:hover
+{
+	text-decoration: underline;
+}
+#todo
+{
+	box-shadow: 0 0 2em rgba(0,0,0,0.7);
+	width: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#todo #info
+{
+	box-shadow: inset 0 0 1em #ccc;
+	overflow: hidden;
+}
+#info #contenido
+{
+	float: left;
+	width: 50%;
+	text-align: justify;
+	-webkit-column-count:2;
+}
+#info aside
+{
+	border: groove 0.1em;
+	float: right;
+	width: 40%;
+	text-align: center;
+}
+#todo footer
+{
+	background: #000;
+	clear: both;
+	color: #999;
+	font-size: 0.8rem;
+	/*espacion intralineal*/
+	line-height: 1rem;
+	padding: 2em; 
+	-webkit-column-count:3;
+	text-align: justify;
+}
+#info #contenido
+{
+	padding: 1em;
+	float: left;
+	width: 50%;
+}
+/*cuando me imprima la pagian se desaparezca el header y el aside*/
+@media print{
+	#todo header
+	{ 
+		display: none;
+	} 
+	#todo aside
+	{
+		display: none; 
+	}
+	footer
+	{
+		border: dotted 1em; 
+	}
+}
+/*pagina por defecto=1200px
+le decimos que cuando reduzca la pagina a menos de 700px me aplique el proceso*/
+/*
+@media screen and (max-width: 700px){
+	body 
+	{ 
+		background: #000;
+
+	} 
+}*/
+/*cuando entren en un iphone el menu se coloque completo cambiar de color al 100% en filas*/
+@media screen and (max-width: 480px){
+	#mimenu li 
+	{ 
+		background: rgba(100,100,100,0.3);
+		border-bottom: rgb(255,255,0) solid 0.1em;
+		display: block;
+		width: 100%;
+
+	} 
+	#todo #info
+	{ 
+		margin-top: 1em;
+		-webkit-column-count:1;	
+	}
+}
